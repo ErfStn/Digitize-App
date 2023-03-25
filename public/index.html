@@ -7,8 +7,13 @@
 		<title>Digitize App</title>
 	</head>
 	<body class="bg-gray-100 container m-auto px-4">
+		<!-- header navbar-->
+		<header>
+      <div class="fixed"></div>
+    </header>
+
 		<!-- app bar -->
-		<div class="flex justify-between items-centerm mt-10 mb-4">
+		<div class="md:hidden flex justify-between items-centerm mt-8 mb-4">
 			<div class="w-12 h-11">
 				<svg
 					width="50"
@@ -70,7 +75,7 @@
 		</div>
 
 		<!-- filter - sort -->
-		<div class="flex justify-center items-center gap-x-2 w-full mb-9">
+		<div class="md:hidden flex justify-center items-center gap-x-2 w-full mb-9">
 			<div
 				class="rounded-md bg-white flex justify-start items-center p-2 w-1/2"
 			>
@@ -158,735 +163,178 @@
 
 		<!-- Products list -->
 		<div
-			class="grid gap-2 gap-y-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4"
+			x-data="products=[
+    {id:1,title:'ساعت هوشمند اپل سری 8',price:'۴۱,۹۹۰,۰۰۰ تومان'},
+    {id:2,title:'ساعت هوشمند اپل سری 7',price:'۱۴,۹۹۰,۰۰۰ تومان'},
+    {id:3,title:'ساعت هوشمند اپل سری 6',price:'۱۴,۹۹۰,۰۰۰ تومان'},
+    {id:4,title:'ساعت هوشمند اپل سری 8',price:'۴۱,۹۹۰,۰۰۰ تومان'},
+    {id:5,title:'ساعت هوشمند اپل سری 4',price:'۱۴,۹۹۰,۰۰۰ تومان'},
+    {id:6,title:'ساعت هوشمند اپل سری 5',price:'۱۴,۹۵۰,۰۰۰ تومان'},
+    {id:7,title:'ساعت هوشمند اپل سری 5',price:'۱۴,۹۵۰,۰۰۰ تومان'},
+    {id:8,title:'ساعت هوشمند اپل سری 6',price:'۴۱,۹۹۰,۰۰۰ تومان'},
+    ]"
+			class="grid gap-2 gap-y-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-4"
 		>
-			<!-- product -->
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
+			<template x-for="p in products">
+				<!-- single product -->
+				<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
 					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
+						class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
 					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
+						<!-- img -->
+						<img
+							class="w-16"
+							src="../assets/images/Cart/1.png"
+							alt="products"
+						/>
+						<div
+							class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
 						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
+							<svg
+								width="12"
+								height="10"
+								viewBox="0 0 12 10"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
+									fill="#FF755C"
+								/>
+							</svg>
+						</div>
 					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
+					<!-- product desc. -->
+					<div class="flex justify-between items-center px-2 mb-3">
+						<span class="text-slate-300 text-xs sm:text-sm"> اپل </span>
+						<div x-data="{ color: 'golbehi' }" class="flex items-center">
+							<div
+								@click="color = 'golbehi'"
+								class="rounded-full -ml-1 border-2 cursor-pointer flex justify-center items-center border-white bg-orange-300 sm:w-5 sm:h-5 w-4 h-4"
+							>
+								<svg
+									x-show="color=== 'golbehi'"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-5 h-5 stroke-white"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12.75l6 6 9-13.5"
+									/>
+								</svg>
+							</div>
+							<div
+								@click="color = 'indigo'"
+								class="rounded-full -ml-1 border-2 cursor-pointer flex justify-center items-center border-white bg-indigo-600 sm:w-5 sm:h-5 w-4 h-4"
+							>
+								<svg
+									x-show="color=== 'indigo'"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-4 h-4 stroke-white"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12.75l6 6 9-13.5"
+									/>
+								</svg>
+							</div>
+							<div
+								@click="color = 'yellow'"
+								class="rounded-full -ml-1 border-2 cursor-pointer flex justify-center items-center border-white bg-yellow-400 sm:w-5 sm:h-5 w-4 h-4"
+							>
+								<svg
+									x-show="color=== 'yellow'"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-4 h-4 stroke-white"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12.75l6 6 9-13.5"
+									/>
+								</svg>
+							</div>
+							<div
+								@click="color = 'orange'"
+								class="rounded-full -ml-1 border-2 cursor-pointer flex justify-center items-center border-white bg-orange-400 sm:w-5 sm:h-5 w-4 h-4"
+							>
+								<svg
+									x-show="color=== 'orange'"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-4 h-4 stroke-white"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12.75l6 6 9-13.5"
+									/>
+								</svg>
+							</div>
+							<div
+								@click="color = 'white'"
+								class="rounded-full -ml-1 border-2 cursor-pointer flex justify-center items-center border-gray-300 bg-white sm:w-5 sm:h-5 w-4 h-4"
+							>
+								<svg
+									x-show="color=== 'white'"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="w-4 h-4 stroke-black"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12.75l6 6 9-13.5"
+									/>
+								</svg>
+							</div>
+						</div>
 					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
+					<!-- product title -->
+					<div class="px-2 mb-2">
+						<p
+							x-text="p.title"
+							class="text-slate-900 text-xs font-sans sm:text-lg"
+						></p>
+					</div>
+					<!-- product price -->
 					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
+						x-text="p.price"
+						class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium sm:text-lg"
+					></div>
+					<hr class="px-6" />
+					<!-- product button -->
+					<button
+						class="p-1 text-center w-full text-orange-400 font-bold text-base md:text-lg roun"
 					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
+						مشاهده و سفارش
+					</button>
 				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
-			<div class="p-1 bg-white rounded-xl overflow-hidden shadow-md">
-				<div
-					class="rounded-lg p-4 bg-gray-200 flex justify-center items-center relative mb-2"
-				>
-					<!-- img -->
-					<img class="w-16" src="../assets/images/Cart/1.png" alt="products" />
-					<div
-						class="rounded-full bg-gray-300 w-7 h-7 flex justify-center items-center absolute top-2 right-2"
-					>
-						<svg
-							width="12"
-							height="10"
-							viewBox="0 0 12 10"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M6.14091 1.48968C7.28571 0.416852 9.14175 0.416852 10.2865 1.48968C11.4314 2.56257 11.4314 4.30211 10.2865 5.375L6.11391 9.28531C5.99332 9.39831 5.79787 9.39831 5.67729 9.28531L1.50465 5.375C0.359779 4.30211 0.359779 2.56257 1.50465 1.48968C2.64945 0.416852 4.50548 0.416852 5.65028 1.48968L5.8956 1.71957L6.14091 1.48968Z"
-								fill="#FF755C"
-							/>
-						</svg>
-					</div>
-				</div>
-				<!-- product desc. -->
-				<div class="flex justify-between items-center px-2 mb-3">
-					<span class="text-slate-300 text-xs md:text-sm"> اپل </span>
-					<div class="flex">
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-300 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-indigo-600 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-yellow-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-white bg-orange-400 w-3 h-3"
-						></span>
-						<span
-							class="rounded-full border -ml-1 border-gray-300 bg-white w-3 h-3"
-						></span>
-					</div>
-				</div>
-				<!-- product title -->
-				<div class="px-2 mb-2">
-					<p class="text-slate-900 text-xs font-sans md:text-base">
-						ساعت هوشمند اپل سری 6
-					</p>
-				</div>
-				<!-- product price -->
-				<div
-					class="text-orange-600 text-base text-left px-2 mb-3 font-sans font-medium"
-				>
-					48,250,000 تومان
-				</div>
-				<hr class="px-6" />
-				<!-- product button -->
-				<button
-					class="p-1 text-center w-full text-orange-400 font-bold text-base"
-				>
-					مشاهده و سفارش
-				</button>
-			</div>
+			</template>
 		</div>
+
+		<script src="//unpkg.com/alpinejs" defer></script>
 	</body>
 </html>
