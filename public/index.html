@@ -7,12 +7,86 @@
 		<title>Digitize App</title>
 	</head>
 	<body class="bg-gray-100">
-		<div class="lg:container m-auto px-4">
-			<!-- header navbar-->
-			<header>
-				<div class="fixed"></div>
-			</header>
+		<!-- desktop navbar-->
+		<nav
+			class="bg-white shadow-lg w-full sticky top-0 z-10 h-14 items-center hidden md:flex mb-5"
+		>
+			<div
+				class="lg:container m-auto px-4 sm:px-0 flex items-center justify-between gap-x-4 "
+			>
+				<ul class="flex items-center gap-x-6 text-slate-800">
+					<li>
+						<a href="#" class="block rounded py-2">
+							<img src="../assets/images/logo/digitizeLogo.png" alt=""
+						/></a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="block rounded hover:bg-gray-200 transition-all duration-500 px-4 py-2"
+						>
+							خانه</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="block rounded hover:bg-gray-200 transition-all duration-500 px-4 py-2"
+							>تلفن همراه</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="block rounded hover:bg-gray-200 transition-all duration-500 px-4 py-2"
+						>
+							لپ تاپ</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="block rounded hover:bg-gray-200 transition-all duration-500 px-4 py-2"
+						>
+							ساعت هوشمند</a
+						>
+					</li>
+				</ul>
+				<div class="rounded bg-gray-100 max-w-xl flex-1 overflow-hidden p-2 flex items-center gap-2">
+<span>						<svg
+							width="28"
+							height="28"
+							viewBox="0 0 28 28"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13.4167 24.5002C19.5378 24.5002 24.5 19.538 24.5 13.4168C24.5 7.29567 19.5378 2.3335 13.4167 2.3335C7.29552 2.3335 2.33334 7.29567 2.33334 13.4168C2.33334 19.538 7.29552 24.5002 13.4167 24.5002Z"
+								stroke="#222F5D"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M25.6667 25.6668L23.3333 23.3335"
+								stroke="#222F5D"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg></span>
+					<input
+						type="text"
+						placeholder="جستجوی نام محصول، نام برند، نام مدل و..."
+						class="w-full focus:ring-0 bg-transparent border-none text-slate-800 p-0 "
+					>
 
+				</input>
+				</div>
+			</div>
+		</nav>
+
+		<div class="lg:container m-auto px-4 sm:px-0">
 			<!-- app bar -->
 			<div class="md:hidden flex justify-between items-centerm mt-8 mb-4">
 				<div class="w-12 h-11">
@@ -49,7 +123,7 @@
 
 			<!-- filter - sort -->
 			<div
-				class="md:hidden flex justify-center items-center gap-x-2 w-flil mb-9"
+				class="md:hidden flex justify-center items-center gap-x-2 w-full mb-9"
 			>
 				<div
 					class="rounded-md bg-white flex justify-start items-center p-2 w-1/2"
@@ -140,15 +214,15 @@
 				class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)_100px] md:gap-y-8 md:gap-x-5 mb-8"
 			>
 				<!-- sidebar -->
-				<div class="hidden md:block row-span-2 col-span-3 lg:col-span-2">
+				<div class="hidden md:block row-span-2 col-span-3 xl:col-span-2">
 					<div class="p-5 bg-white">
 						<div class="text-orange-400 font-bold text-lg mb-5">دسته بندی</div>
-						<ul>
+						<ul class="text-slate-400">
 							<li class="mr-1 mb-4">
 								<a href="#" class="flex items-center"
 									><span class="relative">
 										<span
-											class="w-4 h-4 bg-gray-400 rounded-full opacity-20 absolute -top-1 -right-1"
+											class="w-4 h-4 bg-gray-200 rounded-full opacity-20 absolute -top-1 -right-1"
 										></span>
 										<svg
 											width="14"
@@ -156,24 +230,22 @@
 											viewBox="0 0 14 17"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
+											stroke="currentColor"
 										>
 											<path
 												d="M13 4.75V12.25C13 15.25 12.25 16 9.25 16H4.75C1.75 16 1 15.25 1 12.25V4.75C1 1.75 1.75 1 4.75 1H9.25C12.25 1 13 1.75 13 4.75Z"
-												stroke="#222F5D"
 												stroke-width="1.125"
 												stroke-linecap="round"
 												stroke-linejoin="round"
 											/>
 											<path
 												d="M8.5 3.625H5.5"
-												stroke="#222F5D"
 												stroke-width="1.125"
 												stroke-linecap="round"
 												stroke-linejoin="round"
 											/>
 											<path
 												d="M6.99984 13.825C7.64187 13.825 8.16234 13.3045 8.16234 12.6625C8.16234 12.0205 7.64187 11.5 6.99984 11.5C6.35781 11.5 5.83734 12.0205 5.83734 12.6625C5.83734 13.3045 6.35781 13.825 6.99984 13.825Z"
-												stroke="#222F5D"
 												stroke-width="1.125"
 												stroke-linecap="round"
 												stroke-linejoin="round"
@@ -181,7 +253,7 @@
 										</svg>
 									</span>
 
-									<span class="text-slate-800 text-lg mr-2">تلفن همراه</span></a
+									<span class="text-lg mr-2">تلفن همراه</span></a
 								>
 							</li>
 							<li class="mr-1 mb-4">
@@ -194,7 +266,7 @@
 											width="16"
 											height="16"
 											viewBox="0 0 16 16"
-											class="stroke-slate-400"
+											stroke="currentColor"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
 										>
@@ -221,20 +293,20 @@
 										</svg>
 									</span>
 
-									<span class="text-slate-400 text-lg mr-2">لپ تاپ</span></a
+									<span class="text-lg mr-2">لپ تاپ</span></a
 								>
 							</li>
 							<li class="mr-1 mb-4">
 								<a href="#" class="flex items-center"
 									><span class="relative">
 										<span
-											class="w-4 h-4 bg-gray-200 rounded-full opacity-20 absolute -top-1 -right-1"
+											class="w-4 h-4 bg-gray-400 rounded-full opacity-20 absolute -top-1 -right-1"
 										></span>
 										<svg
 											width="16"
 											height="16"
 											viewBox="0 0 16 16"
-											class="stroke-slate-400"
+											class="stroke-slate-800"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
 										>
@@ -265,7 +337,7 @@
 										</svg>
 									</span>
 
-									<span class="text-slate-400 text-lg mr-2"
+									<span class="text-slate-800 text-lg mr-2"
 										>ساعت هوشمند</span
 									></a
 								>
@@ -277,7 +349,7 @@
 							<!-- accordion header -->
 							<div
 								@click="isOpenBrand=!isOpenBrand"
-								class="flex items-center justify-between mb-4"
+								class="flex items-center justify-between mb-4 mr-1"
 							>
 								<div class="flex items-center">
 									<span class="relative">
@@ -336,6 +408,7 @@
 							<div x-show="isOpenBrand" class="mb-8 flex flex-col gap-3">
 								<label for="apple">
 									<input
+										checked
 										type="checkbox"
 										id="apple"
 										class="rounded text-orange-300 focus:ring-orange-400"
@@ -373,7 +446,7 @@
 							<!-- accordion header -->
 							<div
 								@click="isOpenColor=!isOpenColor"
-								class="flex items-center justify-between mb-4"
+								class="flex items-center justify-between mb-4 mr-1"
 							>
 								<div class="flex items-center">
 									<span class="relative">
@@ -491,7 +564,7 @@
 							<!-- accordion header -->
 							<div
 								@click="isOpenBrand=!isOpenBrand"
-								class="flex items-center justify-between mb-4"
+								class="flex items-center justify-between mb-4 mr-1"
 							>
 								<div class="flex items-center">
 									<span class="relative">
@@ -591,7 +664,7 @@
 					</div>
 				</div>
 				<!-- filter and sort desk -->
-				<div class="hidden md:block col-span-9 lg:col-span-10">
+				<div class="hidden md:block col-span-9 xl:col-span-10">
 					<div
 						x-data="{sort:1 , activeClass:'text-slate-800 font-bold'}"
 						class="bg-white p-2 rounded-md flex items-center justify-start gap-5"
@@ -686,7 +759,7 @@
 					</div>
 				</div>
 				<!-- Products list -->
-				<div class="col-span-12 md:col-span-9 lg:col-span-10">
+				<div class="col-span-12 md:col-span-9 xl:col-span-10">
 					<div
 						x-data="products=[
     {id:1,title:'ساعت هوشمند اپل سری 8',price:'۴۱,۹۹۰,۰۰۰ تومان'},
@@ -844,7 +917,7 @@
 								<div class="px-2 mb-2">
 									<p
 										x-text="p.title"
-										class="text-slate-900 text-xs font-sans sm:text-lg"
+										class="text-slate-900 text-xs font-sans md:text-base lg:text-lg"
 									></p>
 								</div>
 								<!-- product price -->
@@ -855,7 +928,7 @@
 								<hr class="px-6" />
 								<!-- product button -->
 								<button
-									class="p-1 text-center w-flil text-orange-400 font-bold text-base md:text-lg roun"
+									class="p-1 text-center w-full text-orange-400 font-bold text-base md:text-lg"
 								>
 									مشاهده و سفارش
 								</button>
