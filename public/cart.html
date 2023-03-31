@@ -91,7 +91,7 @@
 			class="md:container m-auto px-4 lg:px-0 2xl:max-w-screen-2xl pb-20 md:pb-0"
 		>
 			<!-- app bar -->
-			<div class="md:hidden flex justify-between items-centerm my-8">
+			<div class="md:hidden flex justify-between items-centerm mb-8 pt-8">
 				<div
 					class="rounded-md shadow-md bg-white w-8 h-8 items-center justify-center flex cursor-pointer"
 				>
@@ -139,6 +139,13 @@
 				</div>
 			</div>
 
+			<div class="w-2/3 lg:flex pl-6 justify-between items-start mb-6 hidden">
+				<span class="text-xl font-bold text-slate-800">سبد خرید</span>
+				<span class="text-xl text-orange-600"
+					><a href="#">بازگشت به خانه</a></span
+				>
+			</div>
+
 			<div class="flex flex-col items-start w-full lg:flex-row lg:gap-x-8">
 				<!-- cart item -->
 				<div
@@ -148,12 +155,6 @@
           {id:2,title:'آیفون 13 128 گیگ',price:'۴۳,۵۰۰,۰۰۰ تومان',quantity:1,img:'../assets/images/Cart/phone.png'},
           ]"
 				>
-					<div class="w-2/3 lg:flex justify-between items-center mb-6 hidden">
-						<span class="text-xl font-bold text-slate-800">سبد خرید</span>
-						<span class="text-xl text-orange-600"
-							><a href="#">بازگشت به خانه</a></span
-						>
-					</div>
 					<template x-for="p in carts">
 						<div
 							key="p.id"
@@ -241,9 +242,6 @@
 							<span class="text-lg text-orange-600">۵۸,۴۹۰,۰۰۰ تومان</span>
 						</div>
 						<div class="flex justify-between items-center">
-							<span class="text-slate-800 cursor-pointer lg:hidden"
-								>کد تخفیف دارید؟</span
-							>
 							<span class="text-slate-800">کد تخفیف:</span>
 							<div class="flex">
 								<input
@@ -262,7 +260,9 @@
 							<span class="text-lg text-slate-800">۴۹۰,۰۰۰ تومان</span>
 						</div>
 						<div class="flex justify-between items-center">
-							<span class="text-lg font-semibold text-slate-900">تخفیف:</span>
+							<span class="text-lg font-semibold text-slate-900"
+								>قیمت نهایی:</span
+							>
 							<span class="text-xl font-semibold text-orange-600"
 								>۵۸,۰۰۰,۰۰۰ تومان</span
 							>
