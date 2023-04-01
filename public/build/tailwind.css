@@ -740,6 +740,9 @@ select{
 .h-8{
   height: 2rem;
 }
+.h-\[calc\(100\%-360px\)\]{
+  height: calc(100% - 360px);
+}
 .h-auto{
   height: auto;
 }
@@ -749,11 +752,27 @@ select{
 .h-screen{
   height: 100vh;
 }
+.h-\[calc\(100\%-theme\(space\.24\)\)\]{
+  height: calc(100% - 6rem);
+}
+.h-\[calc\(100\%_-_10rem\)\]{
+  height: calc(100% - 10rem);
+}
+.h-\[calc\(100\%_-_90rem\)\]{
+  height: calc(100% - 90rem);
+}
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .max-h-80{
   max-height: 20rem;
 }
 .max-h-\[calc\(100vh_-_84px\)\]{
   max-height: calc(100vh - 84px);
+}
+.min-h-screen{
+  min-height: 100vh;
 }
 .w-1{
   width: 0.25rem;
@@ -1073,6 +1092,9 @@ select{
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pb-20{
+  padding-bottom: 5rem;
+}
 .pl-6{
   padding-left: 1.5rem;
 }
@@ -1081,9 +1103,6 @@ select{
 }
 .pt-8{
   padding-top: 2rem;
-}
-.pb-20{
-  padding-bottom: 5rem;
 }
 .text-left{
   text-align: left;
@@ -1141,15 +1160,6 @@ select{
 }
 .leading-loose{
   line-height: 2;
-}
-.leading-8{
-  line-height: 2rem;
-}
-.leading-9{
-  line-height: 2.25rem;
-}
-.leading-10{
-  line-height: 2.5rem;
 }
 .tracking-tighter{
   letter-spacing: -0.05em;
@@ -1524,15 +1534,6 @@ select{
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-  .lg\:leading-3{
-    line-height: .75rem;
-  }
-  .lg\:leading-8{
-    line-height: 2rem;
-  }
-  .lg\:leading-10{
-    line-height: 2.5rem;
-  }
   .lg\:shadow-none{
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
@@ -1552,16 +1553,14 @@ select{
   .xl\:w-3\/4{
     width: 75%;
   }
+  .xl\:max-w-screen-xl{
+    max-width: 1280px;
+  }
   .xl\:flex-row{
     flex-direction: row;
   }
   .xl\:gap-x-8{
     -moz-column-gap: 2rem;
          column-gap: 2rem;
-  }
-}
-@media (min-width: 1536px){
-  .\32xl\:max-w-screen-2xl{
-    max-width: 1536px;
   }
 }

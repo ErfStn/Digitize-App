@@ -8,11 +8,11 @@
 	</head>
 	<body class="bg-gray-100 h-screen">
 		<!-- desktop navbar-->
-		<nav
+		<header
 			class="bg-white shadow-lg w-full sticky top-0 z-10 h-16 items-center hidden md:flex mb-5"
 		>
-			<div
-				class="md:container m-auto px-4 lg:px-0 flex items-center justify-between gap-x-4"
+			<nav
+				class="md:container m-auto px-4 lg:px-0 flex items-center justify-between gap-x-4 xl:max-w-screen-xl"
 			>
 				<ul class="flex items-center gap-x-2 lg:gap-x-6 text-slate-800">
 					<li>
@@ -84,11 +84,11 @@
 						class="w-full focus:ring-0 bg-transparent border-none text-slate-800 p-0"
 					/>
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</header>
 		<!-- !container -->
-		<div
-			class="md:container m-auto px-4 lg:px-0 2xl:max-w-screen-2xl pb-20 md:pb-0"
+		<main
+			class="md:container m-auto px-4 lg:px-0 xl:max-w-screen-xl pb-20 md:pb-0"
 		>
 			<!-- app bar -->
 			<div class="md:hidden flex justify-between items-centerm mb-8 pt-8">
@@ -918,7 +918,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 
 		<!-- bottom navigation -->
 		<div
@@ -933,8 +933,8 @@
 		</div>
 
 		<!-- footer -->
-		<footer class="w-full bg-white py-8 hidden md:block mt-12">
-			<div class="container m-auto flex">
+		<footer class="w-full bg-white py-8 hidden md:block mt-12 bottom-0">
+			<div class="container m-auto flex px-4 lg:px-0 xl:max-w-screen-xl">
 				<div class="w-3/4">
 					<div class="mb-6 flex gap-x-2 items-center">
 						<img src="../assets/images/logo/digitizeLogo.png" alt="" /><span
