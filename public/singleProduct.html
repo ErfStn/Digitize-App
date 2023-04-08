@@ -6,13 +6,13 @@
 		<link rel="stylesheet" href="./build/tailwind.css" />
 		<title>Product</title>
 	</head>
-	<body class="bg-gray-100 h-screen">
+	<body class="bg-gray-100 h-screen md:justify-between md:flex flex-col">
 		<!-- desktop navbar-->
 		<header
 			class="bg-white shadow-lg w-full sticky top-0 z-10 h-16 items-center hidden md:flex mb-5"
 		>
 			<nav
-				class="md:container m-auto px-4 lg:px-0 flex items-center justify-between gap-x-4 xl:max-w-screen-xl"
+				class="md:container m-auto px-4 py-2 lg:px-0 flex items-center justify-between gap-x-4 xl:max-w-screen-xl"
 			>
 				<ul class="flex items-center gap-x-2 lg:gap-x-6 text-slate-800">
 					<li>
@@ -523,27 +523,6 @@
 												/>
 											</svg>
 										</div>
-										<div
-											@click="color = 'orange'"
-											class="rounded-full -ml-2 border-2 cursor-pointer flex justify-center items-center border-white bg-orange-400 sm:w-8 sm:h-8 w-7 h-7"
-											:class="color=== 'orange' ? 'ring-2 ring-orange-400' :''"
-										>
-											<svg
-												x-show="color=== 'orange'"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke-width="1.5"
-												stroke="currentColor"
-												class="w-4 h-4 stroke-white"
-											>
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													d="M4.5 12.75l6 6 9-13.5"
-												/>
-											</svg>
-										</div>
 
 										<div
 											@click="color = 'white'"
@@ -933,7 +912,7 @@
 		</div>
 
 		<!-- footer -->
-		<footer class="w-full bg-white py-8 hidden md:block mt-12 bottom-0">
+		<footer class="w-full bg-white py-8 hidden md:block mt-12">
 			<div class="container m-auto flex px-4 lg:px-0 xl:max-w-screen-xl">
 				<div class="w-3/4">
 					<div class="mb-6 flex gap-x-2 items-center">
